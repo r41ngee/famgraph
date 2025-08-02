@@ -27,7 +27,7 @@ public class Person {
     }
 }
 
-public class Relationship {
+public class Relation {
     public Guid fromId;
     public Guid toId;
     public RelationshipType type;
