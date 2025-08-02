@@ -9,10 +9,20 @@ public class Tree {
 
     public ulong Version { get; private set; } = 0;
 
-    public bool AddPerson(Person person) {
+    public bool addPerson(Person person) {
         bool validation = !people.ContainsKey(person.id);
         if (validation) {
             people.Add(person.id, person);
+            Version++;
+        }
+        return validation;
+    }
+
+    public bool removePerson(Person person) {
+        bool validation = people.ContainsKey(person.id);
+        if (validation) {
+            people.Remove(person.id);
+            Version++;
         }
         return validation;
     }
@@ -24,5 +34,5 @@ public class Tree {
             Version++;
         }
         return false;
-    } 
+    }
 }
