@@ -9,10 +9,10 @@ public enum Gender {
 
 public class Person {
     public Guid id = Guid.NewGuid();
-    public string name { get; private set; }
-    public Gender gender { get; private set; }
-    public DateOnly? birthDate { get; private set; }
-    public DateOnly? deathDate { get; private set; }
+    public string name { get; set; }
+    public Gender gender { get; set; }
+    public DateOnly? birthDate { get; set; }
+    public DateOnly? deathDate { get; set; }
 
     public Person(
         string name,
