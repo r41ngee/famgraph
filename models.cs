@@ -39,6 +39,5 @@ public enum RelationshipType {
     Parent,
     Child,
     Spouse,
-    FullSibling,
-    HalfSibling,
+    Sibling
 }
