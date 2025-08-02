@@ -1,0 +1,2 @@
+namespace FG.Core.Tree;
+

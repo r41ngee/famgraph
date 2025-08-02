@@ -1,6 +1,6 @@
 using System;
 
-namespace FG.Models;
+namespace FG.Core.Models;
 
 public enum Gender {
     Male,
