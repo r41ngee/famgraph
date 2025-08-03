@@ -18,7 +18,7 @@ public class Person {
 
     public string represent;
 
-    public byte[] idHash {get;}
+    public byte[] hash {get;}
 
 
     public Person(
@@ -33,7 +33,7 @@ public class Person {
         this.deathDate = deathDate;
 
         represent = asString();
-        idHash = calculateIdHash();
+        hash = calculateIdHash();
     }
 
     byte[] calculateIdHash() {
