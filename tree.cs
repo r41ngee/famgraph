@@ -17,4 +17,11 @@ public class Tree {
         _hashPeople.Add(person.hash, person);
         return true;
     }
+
+    public bool TryRemovePerson(Person person) {
+        if (!_hashPeople.ContainsKey(person.hash)) return false;
+        _people.Remove(person.id);
+        _hashPeople.Remove(person.hash);
+        return true;
+    }
 }
