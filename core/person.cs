@@ -1,4 +1,6 @@
 using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FG.Core.Models;
 
@@ -14,6 +16,11 @@ public class Person {
     public DateOnly? birthDate { get; set; }
     public DateOnly? deathDate { get; set; }
 
+    public string represent;
+
+    public byte[] idHash {get;}
+
+
     public Person(
         string name,
         Gender gender,
@@ -24,5 +31,18 @@ public class Person {
         this.gender = gender;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
+
+        represent = asString();
+        idHash = calculateIdHash();
+    }
+
+    byte[] calculateIdHash() {
+        using var sha256 = SHA256.Create();
+        return sha256.ComputeHash(Encoding.UTF8.GetBytes(represent));
+    }
+
+    public string asString() {
+        return 
+        $"g:{gender}_name:{name}_bd:{(birthDate?.ToString() ?? "none")}_dd:{deathDate?.ToString() ?? "none"}";
     }
 }
